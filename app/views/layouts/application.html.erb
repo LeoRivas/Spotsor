@@ -31,11 +31,26 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
+
+      <li>
+        <% if current_user.nil? %>
+          
+        
+        <a href="<%= new_user_session_path %>">Ingreso Usuarios</a>
+         <% else %>
       
+       
+      
+      <%= link_to("Salir" , destroy_user_session_path,  :method => :delete)%>
+      </li>
+        <% end %>
+
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
+
 <%= yield %>
 
 </body>
