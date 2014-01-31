@@ -1,0 +1,32 @@
+<div class:"container">
+
+<h1>Listing pins</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Photo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pins.each do |pin| %>
+      <tr>
+        <td><%= pin.description %></td>
+        <td><%= pin.photo %></td>
+        <td><%= link_to 'Mostrar', pin, :class => 'btn btn-primary' , :style => 'color:white'  %></td>
+        <td><%= link_to 'Editar', edit_pin_path(pin), :class => 'btn btn-primary' , :style => 'color:white' %></td>
+        <td><%= link_to 'Borrar', pin, :class => 'btn btn-danger' , :style => 'color:white', method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear nuevo Pin', new_pin_path, :class => 'btn btn-primary' , :style => 'color:white'  %>
+</div>

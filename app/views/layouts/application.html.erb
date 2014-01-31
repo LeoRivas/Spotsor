@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spotsor</title>
+  <title>Spotsor.me</title>
+
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+ 
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation" style="margin-bottom:0px">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">Spotsor</a>
-  </div>
+  <nav class="navbar navbar-default" role="navigation" style="margin-bottom:10px">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Spotsor</a>
+    </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Link</a></li>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="#">Link</a></li>
 
-      <li>
-        <% if current_user.nil? %>
+        <li>
+          <% if current_user.nil? %>
+            
           
+          <a href="<%= new_user_session_path %>">Ingreso Usuarios</a>
+           <% else %>
         
-        <a href="<%= new_user_session_path %>">Ingreso Usuarios</a>
-         <% else %>
-      
-       
-      
-      <%= link_to("Salir" , destroy_user_session_path,  :method => :delete)%>
-      </li>
-        <% end %>
+         
+        
+        <%= link_to("Salir" , destroy_user_session_path,  :method => :delete)%>
+        </li>
+          <% end %>
 
-    </ul>
-  </div><!-- /.navbar-collapse -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
 </nav>
      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>

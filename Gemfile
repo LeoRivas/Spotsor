@@ -4,7 +4,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
+gem 'pg' , group: :production
+gem 'rails_12factor' , group: :production
+
+
 gem 'devise'
 
 # Use SCSS for stylesheets
