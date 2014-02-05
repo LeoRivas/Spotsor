@@ -10,7 +10,7 @@ gem 'rails_12factor' , group: :production
 
 
 gem 'devise'
-
+gem 'carrierwave'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
