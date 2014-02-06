@@ -23,6 +23,8 @@
             <li><a href="<%= new_user_session_path %>">Ingreso Usuarios</a></li>
             <li><a href="<%= new_user_registration_path %>">Registro</a></li>
             <% else %>
+            <li> <a href="#">Hola <%= current_user.email %> </a></li>
+            <li></li>
             <li><a href="<%= destroy_user_session_path %>" data-method="delete">Salir</a></li>
             <% end %>
           </ul>
