@@ -1,14 +1,16 @@
 Spotsor::Application.routes.draw do
-  get "users/show"
-  resources :pins
-  resources :users, :only => :show
   devise_for :users
+  resources :pins
+ 
+ 
+  get "welcome/index"
+   get "users/show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
    root 'pages#index'
-
+   get 'mypins' => 'pins#mypins'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

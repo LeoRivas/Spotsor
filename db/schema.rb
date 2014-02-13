@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206022237) do
+ActiveRecord::Schema.define(version: 20140206175919) do
 
   create_table "pins", force: true do |t|
     t.text     "description"
-    t.text     "photo"
+    t.string   "photo"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
