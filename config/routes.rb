@@ -1,4 +1,6 @@
 Spotsor::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users
   resources :pins
  
@@ -10,6 +12,7 @@ Spotsor::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'pages#index'
+   get "forms/new_user_registration" => 'devise#registrations', :as => :forms
    get 'mypins' => 'pins#mypins'
    get 'pinsof/:user_id' => 'pins#pinsof' ,:as => "pinsof"
   # Example of regular route:

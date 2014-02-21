@@ -1,2 +1,57 @@
-pinsof.html.erb
-<%= @user_id %>
+<h1>Listing pins</h1>
+
+
+
+
+           <% if user_signed_in? %>
+              <%= link_to 'Crear nuevo Pin', new_pin_path, :class => 'btn btn-primary' , :style => 'color:white'  %>
+            <% end %>
+<br>
+<br>
+  <div id="container">
+
+    <% @pins.each do |pin| %>
+      <div class= "item" style="width:25%">
+        <div class="thumbnail">
+
+
+
+             <%= pin.name %>
+
+
+
+
+
+             <%= link_to(image_tag(pin.photo , :class=> 'img-responsive'), pin) %>
+            
+             <%= pin.description %>
+                <div class="buttons" style="margin-top:10px; margin-bottom:10px">
+              
+              <% if user_signed_in? %>
+              <%= link_to 'Editar', edit_pin_path(pin), :class => 'btn' %>
+              <%= link_to 'Borrar', pin, method: :delete, data: { confirm: 'Estas seguro?' } , :class=> 'btn' %>
+          <% end %>
+            </div>
+          </div>
+      </div>
+    <% end %>
+
+
+<br>
+</div>
+<script type="text/javascript">
+var $container = $('#container');
+// initialize
+$container.masonry({
+  columnWidth: 200,
+  itemSelector: '.item'
+});
+$(window).load(function(){
+var $container = $('#container');
+// initialize
+$container.masonry({
+  columnWidth: 200,
+  itemSelector: '.item'
+});
+})
+</script>

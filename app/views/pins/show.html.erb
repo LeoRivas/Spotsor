@@ -1,6 +1,7 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Name:</strong>
   <%= @pin.name %>
@@ -12,7 +13,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= image_tag(@pin.photo) %>
+  <%= image_tag(@pin.photo, :class=> 'img-responsive') %>
 </p>
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_pin_path(@pin) %> |

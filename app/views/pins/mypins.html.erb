@@ -1,16 +1,18 @@
-<div class="container">
 
+  <h1>Mis Fotos</h1>
+<br>
 
 
            <% if user_signed_in? %>
               <%= link_to 'Crear nuevo Pin', new_pin_path, :class => 'btn btn-primary' , :style => 'color:white'  %>
             <% end %>
 
-  <h1>Mis Fotos</h1>
 <br>
 <br>
+  <div id="container">
+
     <% @pins.each do |pin| %>
-      <div class="col-md-3">
+     <div class= "item" style="width:25%">
         <div class="thumbnail">
              <%= pin.name %>
              <%= link_to(image_tag(pin.photo , :class=> 'img-responsive'), pin) %>
@@ -31,3 +33,19 @@
 <br>
 
 </div>
+<script type="text/javascript">
+var $container = $('#container');
+// initialize
+$container.masonry({
+  columnWidth: 200,
+  itemSelector: '.item'
+});
+$(window).load(function(){
+var $container = $('#container');
+// initialize
+$container.masonry({
+  columnWidth: 200,
+  itemSelector: '.item'
+});
+})
+</script>

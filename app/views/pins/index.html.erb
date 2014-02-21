@@ -1,19 +1,27 @@
 <h1>Listing pins</h1>
-<div id="container">
+
 
 
 
            <% if user_signed_in? %>
               <%= link_to 'Crear nuevo Pin', new_pin_path, :class => 'btn btn-primary' , :style => 'color:white'  %>
             <% end %>
+<br>
+<br>
+  <div id="container">
 
-  
-<br>
-<br>
     <% @pins.each do |pin| %>
       <div class= "item" style="width:25%">
         <div class="thumbnail">
+
+
+
              <%= pin.name %>
+
+
+
+
+
              <%= link_to(image_tag(pin.photo , :class=> 'img-responsive'), pin) %>
             
              <%= pin.description %>

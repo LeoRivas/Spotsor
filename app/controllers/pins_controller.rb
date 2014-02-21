@@ -8,6 +8,8 @@ class PinsController < ApplicationController
   end
   def pinsof
     @user_id = params[:user_id]
+    @user = User.find(@user_id)
+    @pins = @user.pins
     
   end
   # GET /pins
