@@ -1,12 +1,17 @@
 Spotsor::Application.routes.draw do
+  
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
   resources :pins
+  resources :contests
  
  
   get "welcome/index"
    get "users/show"
+  
+  get "contest/index" => "contests#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -15,6 +20,8 @@ Spotsor::Application.routes.draw do
    get "forms/new_user_registration" => 'devise#registrations', :as => :forms
    get 'mypins' => 'pins#mypins'
    get 'pinsof/:user_id' => 'pins#pinsof' ,:as => "pinsof"
+  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

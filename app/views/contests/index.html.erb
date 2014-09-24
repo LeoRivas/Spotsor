@@ -1,0 +1,22 @@
+<div class="container">
+<h1>Concursos Disponibles</h1>
+
+
+    <% @contests.each do |contest| %>
+       <div class="col-md-3">
+      <div class="thumbnail">
+        <%= image_tag(contest.photo , :class=> 'img-responsive')%>
+         <div class="buttons" style="margin-top:10px; margin-bottom:10px">
+        <%= contest.description %>
+        <%= link_to 'Show', contest, :class=>'btn' %>
+      </div>
+      </div> 
+    </div>   
+      
+    <% end %>
+
+
+
+
+
+

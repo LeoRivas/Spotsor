@@ -13,7 +13,17 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav ">
-        <li class=""><a href="<%= pins_path %>">Concursos</a></li>
+        <li class="dropdown">
+        <a id="drop4" role="button" data-toggle="dropdown" href="<%= pins_path %>">Concursos <span class="caret"></span></a>
+        <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Marca 1</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Marca 2</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Marca 3</a></li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="<%= contests_path %>">Todos los Concursos</a></li>
+        </ul>
+      </li>
+        
         <li > <a href="<%= mypins_path %>"> Mi Perfil</a></li>
         <li > <a href="#"> Ganadores</a></li>
       </ul>
@@ -47,3 +57,7 @@
       
     </div><!-- /.navbar-collapse -->
 </nav>
+
+
+      
+    
