@@ -1,12 +1,10 @@
-ActiveAdmin.register Contest do
+ActiveAdmin.register Brand do
 
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params  :photo, :description , :minidesc, :fechainicio, :fechatermino, :brand_id
-  
-
+  permit_params :logo, :name
   #
   # or
   #

@@ -1,0 +1,44 @@
+<h1>Listing brands</h1>
+
+<br>
+<br>
+  <div id="container">
+
+    <% @brands.each do |brand| %>
+      <div class= "item" style="width:25%">
+        <div class="thumbnail">
+
+
+
+             <%= brand.name %>
+
+
+
+
+
+             <%= link_to(image_tag(brand.logo , :class=> 'img-responsive'), brand) %>
+            
+          </div>
+      </div>
+    <% end %>
+
+
+<br>
+
+</div>
+<script type="text/javascript">
+var $container = $('#container');
+// initialize
+$container.masonry({
+  columnWidth: 200,
+  itemSelector: '.item'
+});
+$(window).load(function(){
+var $container = $('#container');
+// initialize
+$container.masonry({
+  columnWidth: 200,
+  itemSelector: '.item'
+});
+})
+</script>

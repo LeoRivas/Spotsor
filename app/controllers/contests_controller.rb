@@ -1,4 +1,13 @@
 class ContestsController < ApplicationController
+ 
+ def contestsof
+
+  @brand_id = params[:brand_id]
+  @brand = Brand.find(@brand_id)
+  @contests = @brand.contests
+   
+ end
+
  def new
    @contest = Contest.new
   end
@@ -20,6 +29,6 @@ class ContestsController < ApplicationController
 
   private
   def contest_params
-    params.require(:contest).permit(:title, :photo, :text)
+    params.require(:contest).permit( :photo, :description , :minidesc, :fechainicio, :fechatermino, :brand_id )
   end
 end

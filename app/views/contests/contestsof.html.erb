@@ -6,8 +6,10 @@
        <div class= "row" style="width:25%">
          <div class="thumbnail">
 
+          <%= contest.minidesc %>
+
            <%= link_to(image_tag(contest.photo , :class=> 'img-responsive'), contest) %>
-           <%= contest.minidesc %>
+           
               <div class="buttons" style="margin-top:10px; margin-bottom:10px">
         
            <%= link_to 'Show', contest, :class=>'btn' %>
@@ -39,4 +41,3 @@ $container.masonry({
 });
 })
 </script>
-

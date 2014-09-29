@@ -1,17 +1,22 @@
 Spotsor::Application.routes.draw do
   
 
+  
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
   resources :pins
   resources :contests
+  resources :brands
  
  
   get "welcome/index"
    get "users/show"
   
   get "contest/index" => "contests#index"
+  get "brand/index" => "brands#index"
+  get 'contestsof/:brand_id' => 'contests#contestsof' ,:as => "contestsof"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

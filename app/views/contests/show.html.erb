@@ -1,14 +1,22 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Photo:</strong>
-  <%= @contest.photo %>
+  <%= image_tag(@contest.photo, :class=> 'img-responsive') %>
 </p>
 
 <p>
   <strong>Description:</strong>
   <%= @contest.description %>
 </p>
+<p>
+  <strong>Término</strong>
+  <%= @contest.fechatermino %>
+</p>
 
-<%= link_to 'Edit', edit_contest_path(@contest) %> |
 <%= link_to 'Back', contests_path %>
+</div>
+
+
+<h1>Sube tus fotos!</h1>
